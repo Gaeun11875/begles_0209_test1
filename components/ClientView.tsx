@@ -90,7 +90,6 @@ const ClientView: React.FC<Props> = ({ theme, parties, siteInfo, onAdminLogin })
             <div className="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-6">
               <div>
                 <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-4 block">Upcoming Events</span>
-                <h3 className="text-4xl md:text-5xl font-light text-gray-900">Curated Parties</h3>
               </div>
             </div>
 
