@@ -34,9 +34,17 @@ const App: React.FC = () => {
 
   // Save to local storage on change
   useEffect(() => {
-    localStorage.setItem('sogeting_theme', JSON.stringify(theme));
-    localStorage.setItem('sogeting_parties', JSON.stringify(parties));
-    localStorage.setItem('sogeting_siteinfo', JSON.stringify(siteInfo));
+    try {
+      localStorage.setItem('sogeting_theme', JSON.stringify(theme));
+      localStorage.setItem('sogeting_parties', JSON.stringify(parties));
+      localStorage.setItem('sogeting_siteinfo', JSON.stringify(siteInfo));
+    } catch (error) {
+      console.error("Local Storage Save Error:", error);
+      // QuotaExceededError check roughly
+      if (error instanceof DOMException && (error.name === 'QuotaExceededError' || error.name === 'NS_ERROR_DOM_QUOTA_REACHED')) {
+        alert("저장 공간이 부족하여 변경사항이 임시 저장되지 않을 수 있습니다. 이미지 용량을 줄이거나 기존 데이터를 정리해주세요.");
+      }
+    }
   }, [theme, parties, siteInfo]);
 
   const toggleAdmin = () => {
