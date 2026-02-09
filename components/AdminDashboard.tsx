@@ -533,7 +533,7 @@ const AdminDashboard: React.FC<Props> = ({
                   </div>
                   <div className="space-y-4">
                     <label className="text-[11px] font-black text-gray-400 uppercase">Google Form URL</label>
-                    <input type="text" required value={editingParty.googleFormUrl || ''} onChange={(e) => setEditingParty({...editingParty, googleFormUrl: e.target.value})} className="w-full border-b-2 border-gray-100 py-4 text-blue-600 outline-none" />
+                    <input type="text" value={editingParty.googleFormUrl || ''} onChange={(e) => setEditingParty({...editingParty, googleFormUrl: e.target.value})} className="w-full border-b-2 border-gray-100 py-4 text-blue-600 outline-none" />
                   </div>
                   <div className="space-y-4"><label className="text-[11px] font-black text-gray-400 uppercase">Date</label><input type="text" required value={editingParty.date} onChange={(e) => setEditingParty({...editingParty, date: e.target.value})} className="w-full border-b-2 border-gray-100 py-4 outline-none" /></div>
                   <div className="space-y-4"><label className="text-[11px] font-black text-gray-400 uppercase">Location</label><input type="text" required value={editingParty.location} onChange={(e) => setEditingParty({...editingParty, location: e.target.value})} className="w-full border-b-2 border-gray-100 py-4 outline-none" /></div>
